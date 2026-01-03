@@ -1,31 +1,47 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; }
-.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+// Инициализация EmailJS
+(function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Замените на ваш из EmailJS
+})();
 
-.header { background: #eccddb; text-align: center; padding: 15px 0; font-weight: bold; }
-.promo-badge { color: #d32f2f; font-size: 14px; }
+// Обработка формы
+document.getElementById('order-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-.product { display: flex; flex-wrap: wrap; background: #fff; border-radius: 20px; overflow: hidden; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.product-image { flex: 1; min-width: 300px; }
-.product-image img { width: 100%; height: 100%; object-fit: cover; }
+    const btn = document.getElementById('submit-btn');
+    btn.innerText = 'ВІДПРАВКА...';
+    btn.disabled = true;
 
-.product-info { flex: 1; padding: 40px; min-width: 300px; }
-h1 { font-size: 28px; margin-bottom: 15px; }
+    // Параметры: service_id, template_id
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(function() {
+            alert('Дякуємо! Замовлення прийнято.');
+            btn.innerText = 'ПІДТВЕРДИТИ ЗАМОВЛЕННЯ';
+            btn.disabled = false;
+            event.target.reset();
+        }, function(error) {
+            alert('Помилка: ' + JSON.stringify(error));
+            btn.disabled = false;
+        });
+});
 
-.price { margin-bottom: 25px; }
-.old-price { text-decoration: line-through; color: #888; margin-right: 10px; font-size: 18px; }
-.current-price { font-size: 26px; font-weight: bold; color: #e44d26; }
+// Простой таймер
+function startTimer(duration, display) {
+    let timer = duration, hours, minutes, seconds;
+    setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-.request-form { display: flex; flex-direction: column; gap: 15px; }
-.request-form input, .request-form select { 
-    padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; 
+        display.textContent = 
+            (hours < 10 ? "0" + hours : hours) + ":" + 
+            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+            (seconds < 10 ? "0" + seconds : seconds);
+
+        if (--timer < 0) timer = duration;
+    }, 1000);
 }
 
-#submit-btn { 
-    padding: 20px; border: none; border-radius: 8px; background: #27ae60; 
-    color: #fff; font-weight: bold; cursor: pointer; font-size: 18px; transition: 0.3s;
-}
-#submit-btn:hover { background: #219150; transform: translateY(-2px); }
-.form-note { font-size: 12px; color: #777; margin-top: 10px; text-align: center; }
-
-@media (max-width: 768px) { .product { flex-direction: column; } }
+window.onload = function () {
+    let time = 3600 * 2; // 2 часа
+    startTimer(time, document.querySelector('#countdown'));
+};
