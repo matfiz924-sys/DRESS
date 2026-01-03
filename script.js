@@ -1,28 +1,34 @@
 (function() {
-    emailjs.init("gxCdLkPbpeuC5CFQ4"); // Береш в Account
+    // Твой ключ без лишних пробелов
+    emailjs.init("gxCdLkPbpeuC5CFQ4");
 })();
 
 document.getElementById('order-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const btn = document.getElementById('submit-btn');
-    btn.innerText = 'ВІДПРАВКА...';
+    btn.innerText = 'Відправка...';
     btn.disabled = true;
 
-    // Встав свої ID сервісу та шаблону
-    emailjs.sendForm('service_x69oyyx', 'template_55bzoo1', this)
+    // ВНИМАНИЕ: Проверь эти два ID в своей панели EmailJS!
+    // Первый — из раздела Email Services, второй — из Email Templates
+    const serviceID = 'service_x69oyyx'; 
+    const templateID = 'template_55bzoo1';
+
+    emailjs.sendForm(serviceID, templateID, this)
         .then(function() {
-            alert('Дякуємо! Замовлення прийнято. Ми скоро зателефонуємо!');
+            alert('Дякуємо! Замовлення прийнято.');
             btn.innerText = 'ПІДТВЕРДИТИ ЗАМОВЛЕННЯ';
             btn.disabled = false;
             event.target.reset();
         }, function(error) {
+            // Если ошибка останется, она выведет подробности в консоль
+            console.log("FAILED...", error);
             alert('Помилка: ' + JSON.stringify(error));
             btn.innerText = 'ПОМИЛКА';
             btn.disabled = false;
         });
 });
-
 // Простой таймер
 function startTimer(duration, display) {
     let timer = duration, hours, minutes, seconds;
