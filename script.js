@@ -1,9 +1,7 @@
-// Инициализация EmailJS
 (function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Замените на ваш из EmailJS
+    emailjs.init("gxCdLkPbpeuC5CFQ4"); // Береш в Account
 })();
 
-// Обработка формы
 document.getElementById('order-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -11,15 +9,16 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     btn.innerText = 'ВІДПРАВКА...';
     btn.disabled = true;
 
-    // Параметры: service_id, template_id
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    // Встав свої ID сервісу та шаблону
+    emailjs.sendForm('service_x69oyyx', 'template_55bzoo1', this)
         .then(function() {
-            alert('Дякуємо! Замовлення прийнято.');
+            alert('Дякуємо! Замовлення прийнято. Ми скоро зателефонуємо!');
             btn.innerText = 'ПІДТВЕРДИТИ ЗАМОВЛЕННЯ';
             btn.disabled = false;
             event.target.reset();
         }, function(error) {
             alert('Помилка: ' + JSON.stringify(error));
+            btn.innerText = 'ПОМИЛКА';
             btn.disabled = false;
         });
 });
