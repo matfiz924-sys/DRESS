@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOPO - Дитячі костюми</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <header class="main-screen">
+        <h1 class="brand">KOPO</h1>
+        <div class="main-image">
+            <img src="https://via.placeholder.com/600x800" alt="Костюм">
+            <div class="sale-badge">-40%</div>
+        </div>
+        
+        <div class="price-block">
+            <span class="old-price">1450 грн</span>
+            <span class="new-price">890 грн</span>
+        </div>
+
+        <div class="timer-container">
+            <p>До кінця акції залишилось:</p>
+            <div id="timer">12:00:00</div>
+        </div>
+
+        <a href="#order" class="order-btn-pulse">ЗАМОВИТИ ЗІ ЗНИЖКОЮ</a>
+    </header>
+
+    <section class="info-section">
+        <div class="container">
+            <h2>Доставка і оплата</h2>
+            <p class="subtitle">Швидко, зручно, надійно.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Доставка</h3>
+                    <p>Наші офіційні партнери Нова пошта та Укрпошта. Відправляємо протягом 1–2 днів.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Оплата</h3>
+                    <p>Оплачуєте тільки після огляду та примірки на пошті. Жодних передоплат.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Надійність</h3>
+                    <p>Ми гарантуємо високу якість тканини. Трьохнитка на флісі, що не кошлатиться.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps-section">
+        <div class="container">
+            <h2>Жодних ризиків і передоплат</h2>
+            <p class="subtitle">Залишаєте номер — решту ми робимо за Вас</p>
+
+            <div class="steps-list">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <p>Заповніть коротку заявку на сайті</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <p>Ми дзвонимо та допомагаємо обрати розмір і колір</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <p>Відправляємо замовлення протягом 1–2 днів</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">4</span>
+                    <p>Приміряєте на пошті й оплачуєте тільки після огляду</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-form-container">
+        <h2>ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h2>
+        <form id="order-form">
+            <input type="text" name="user_name" placeholder="Ваше ім'я" required>
+            <input type="tel" name="user_phone" placeholder="Ваш телефон" required>
+            
+            <div class="form-row">
+                <select name="user_color">
+                    <option value="Не вказано">Колір (якщо знаєте)</option>
+                    <option value="Чорний">Чорний</option>
+                    <option value="Графіт">Графіт</option>
+                    <option value="Беж">Беж</option>
+                </select>
+
+                <select name="user_model">
+                    <option value="Не вказано">Розмір (якщо знаєте)</option>
+                    <option value="122-128">122-128</option>
+                    <option value="134-140">134-140</option>
+                    <option value="146-152">146-152</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submit-btn">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
