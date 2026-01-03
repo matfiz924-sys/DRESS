@@ -2,13 +2,13 @@
     emailjs.init("gxCdLkPbpeuC5CFQ4");
 })();
 
-// Таймер обратного отсчета
+// Таймер (12 годин)
 function startTimer(duration, display) {
-    let timer = duration, hours, minutes, seconds;
+    let timer = duration;
     setInterval(function () {
-        hours = parseInt(timer / 3600, 10);
-        minutes = parseInt((timer % 3600) / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+        let hours = Math.floor(timer / 3600);
+        let minutes = Math.floor((timer % 3600) / 60);
+        let seconds = Math.floor(timer % 60);
 
         hours = hours < 10 ? "0" + hours : hours;
         minutes = minutes < 10 ? "0" + minutes : minutes;
@@ -21,21 +21,21 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    let twelveHours = 60 * 60 * 12;
-    let display = document.querySelector('#timer');
-    startTimer(twelveHours, display);
+    let time = 60 * 60 * 12; // 12 годин
+    startTimer(time, document.querySelector('#timer'));
 };
 
-// Отправка формы
+// Відправка
 document.getElementById('order-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const btn = document.getElementById('submit-btn');
     btn.innerText = 'ОБРОБКА...';
     btn.disabled = true;
 
+    // ВСТАВ СВОЇ ID
     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
         .then(function() {
-            alert('Дякуємо! Замовлення прийнято.');
+            alert('Замовлення прийнято! Менеджер зателефонує вам.');
             btn.innerText = 'ПІДТВЕРДИТИ ЗАМОВЛЕННЯ';
             btn.disabled = false;
             event.target.reset();
