@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дитячі костюми на флісі</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
 
+    <header class="header">
+        <div class="container">
+            <span class="promo-badge">🔥 РОЗПРОДАЖ -35%</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="product">
+            <div class="product-image">
+                <img src="https://kopo.com.ua/uploads/category_setting/176641636969495ff1ce20a7.35587261.jpg" alt="Костюм">
+            </div>
+            
+            <div class="product-info">
+                <h1>Теплий костюм на флісі</h1>
+                <div class="price">
+                    <span class="old-price">1600 грн</span>
+                    <span class="current-price">1249 грн</span>
+                </div>
+                
+                <form id="order-form" class="request-form">
+                    <input type="text" name="user_name" id="name" placeholder="Ваше ім'я" required>
+                    <input type="tel" name="user_phone" id="phone" placeholder="Ваш телефон" required>
+                    
+                    <select name="product_size" id="size">
+                        <option value="122-128">Розмір 122-128</option>
+                        <option value="134-140">Розмір 134-140</option>
+                        <option value="146-152">Розмір 146-152</option>
+                    </select>
+
+                    <button type="submit" id="submit-btn">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+                </form>
+                <p class="form-note">*Ми зателефонуємо для уточнення деталей</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
