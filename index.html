@@ -3,52 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Замовлення костюмів</title>
+    <title>Suit Kids - Дитячі костюми</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
-<section class="order-section">
-    <div class="container">
-        <div class="order-box">
-            <h2>Оформлення замовлення</h2>
-            <form id="order-form">
-                
-                <div class="form-group">
-                    <label>Ваше ім'я:</label>
-                    <input type="text" name="user_name" placeholder="Введіть ім'я" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Телефон:</label>
-                    <input type="tel" name="user_phone" placeholder="068XXXXXXX" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Колір:</label>
-                    <select name="user_color">
-                        <option value="Бежевий">Бежевий</option>
-                        <option value="Графіт">Графіт</option>
-                        <option value="Чорний">Чорний</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Номер моделі:</label>
-                    <select name="user_model">
-                        <option value="Модель #1 (Худі + джогери)">Модель #1 (Худі + джогери)</option>
-                        <option value="Модель #2 (Світшот + джогери)">Модель #2 (Світшот + джогери)</option>
-                        <option value="Модель #3 (Класик)">Модель #3 (Класик)</option>
-                    </select>
-                </div>
-
-                <button type="submit" id="submit-btn">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
-            </form>
+    <header class="hero">
+        <div class="container">
+            <h1 class="logo">KOPO</h1>
+            <p class="tagline">Теплі дитячі костюми на флісі</p>
+            <a href="#order" class="btn-main">Замовити зі знижкою</a>
         </div>
-    </div>
-</section>
+    </header>
 
-<script src="script.js"></script>
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Наші моделі</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://via.placeholder.com/300x400?text=Model+1')"></div>
+                    <h3>Худі + Джогери</h3>
+                    <p class="price">950 грн <span class="old-price">1250 грн</span></p>
+                    <a href="#order" class="btn-buy">Вибрати</a>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://via.placeholder.com/300x400?text=Model+2')"></div>
+                    <h3>Світшот + Джогери</h3>
+                    <p class="price">890 грн <span class="old-price">1100 грн</span></p>
+                    <a href="#order" class="btn-buy">Вибрати</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-section" id="order">
+        <div class="container">
+            <div class="order-container">
+                <h2>Оформлення замовлення</h2>
+                <p class="order-subtitle">Заповніть форму, і ми зв'яжемося з вами</p>
+                
+                <form id="order-form">
+                    <div class="form-input">
+                        <input type="text" name="user_name" placeholder="Ваше ім'я" required>
+                    </div>
+                    <div class="form-input">
+                        <input type="tel" name="user_phone" placeholder="Ваш телефон" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-input">
+                            <select name="user_color">
+                                <option value="Не вказано">Оберіть колір (опція)</option>
+                                <option value="Бежевий">Бежевий</option>
+                                <option value="Графіт">Графіт</option>
+                                <option value="Чорний">Чорний</option>
+                                <option value="Пудра">Пудра</option>
+                            </select>
+                        </div>
+                        <div class="form-input">
+                            <select name="user_model">
+                                <option value="Не вказано">Оберіть модель (опція)</option>
+                                <option value="Худі + Джогери">Худі + Джогери</option>
+                                <option value="Світшот + Джогери">Світшот + Джогери</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
-</html>  
+</html>
