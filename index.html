@@ -3,78 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suit Kids - Дитячі костюми</title>
+    <title>Костюм Дитячий - Купити зі знижкою</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="container">
-            <h1 class="logo">KOPO</h1>
-            <p class="tagline">Теплі дитячі костюми на флісі</p>
-            <a href="#order" class="btn-main">Замовити зі знижкою</a>
-        </div>
-    </header>
+    <div class="top-bar">
+        <p>АКЦІЯ! До кінця знижок залишилось: <span id="timer">12:00:00</span></p>
+    </div>
 
-    <section class="products" id="products">
-        <div class="container">
-            <h2 class="section-title">Наші моделі</h2>
-            <div class="product-grid">
-                <div class="card">
-                    <div class="card-img" style="background-image: url('https://via.placeholder.com/300x400?text=Model+1')"></div>
-                    <h3>Худі + Джогери</h3>
-                    <p class="price">950 грн <span class="old-price">1250 грн</span></p>
-                    <a href="#order" class="btn-buy">Вибрати</a>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url('https://via.placeholder.com/300x400?text=Model+2')"></div>
-                    <h3>Світшот + Джогери</h3>
-                    <p class="price">890 грн <span class="old-price">1100 грн</span></p>
-                    <a href="#order" class="btn-buy">Вибрати</a>
-                </div>
-            </div>
+    <section class="main-screen">
+        <h1 class="brand">KOPO</h1>
+        <p class="product-name">Дитячий костюм на флісі (Модель #1)</p>
+        
+        <div class="main-image">
+            <img src="https://via.placeholder.com/600x800" alt="Костюм">
+            <div class="sale-badge">-40%</div>
         </div>
+
+        <div class="price-block">
+            <span class="old-price">1450 грн</span>
+            <span class="new-price">890 грн</span>
+        </div>
+
+        <a href="#order" class="order-btn-pulse">ОФОРМИТИ ЗАМОВЛЕННЯ</a>
     </section>
 
-    <section class="order-section" id="order">
-        <div class="container">
-            <div class="order-container">
-                <h2>Оформлення замовлення</h2>
-                <p class="order-subtitle">Заповніть форму, і ми зв'яжемося з вами</p>
-                
-                <form id="order-form">
-                    <div class="form-input">
-                        <input type="text" name="user_name" placeholder="Ваше ім'я" required>
-                    </div>
-                    <div class="form-input">
-                        <input type="tel" name="user_phone" placeholder="Ваш телефон" required>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-input">
-                            <select name="user_color">
-                                <option value="Не вказано">Оберіть колір (опція)</option>
-                                <option value="Бежевий">Бежевий</option>
-                                <option value="Графіт">Графіт</option>
-                                <option value="Чорний">Чорний</option>
-                                <option value="Пудра">Пудра</option>
-                            </select>
-                        </div>
-                        <div class="form-input">
-                            <select name="user_model">
-                                <option value="Не вказано">Оберіть модель (опція)</option>
-                                <option value="Худі + Джогери">Худі + Джогери</option>
-                                <option value="Світшот + Джогери">Світшот + Джогери</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <button type="submit" id="submit-btn">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
-                </form>
-            </div>
-        </div>
+    <section class="details">
+        <h2>Чому обирають нас?</h2>
+        <ul>
+            <li>✅ Тканина: Трьохнитка на флісі</li>
+            <li>✅ Не кошлатиться після прання</li>
+            <li>✅ Теплий та приємний до тіла</li>
+            <li>✅ Швидка доставка 1-2 дні</li>
+        </ul>
     </section>
+
+    <section id="order" class="order-form-container">
+        <h2>ЗАМОВИТИ ЗАРАЗ</h2>
+        <form id="order-form">
+            <input type="text" name="user_name" placeholder="Введіть ваше ім'я" required>
+            <input type="tel" name="user_phone" placeholder="Введіть ваш телефон" required>
+            
+            <div class="optional-fields">
+                <select name="user_color">
+                    <option value="Не вказано">Оберіть колір (не обов'язково)</option>
+                    <option value="Чорний">Чорний</option>
+                    <option value="Графіт">Графіт</option>
+                    <option value="Беж">Беж</option>
+                </select>
+
+                <select name="user_model">
+                    <option value="Не вказано">Оберіть розмір/модель (не обов'язково)</option>
+                    <option value="Розмір 122-128">Розмір 122-128</option>
+                    <option value="Розмір 134-140">Розмір 134-140</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submit-btn">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 KOPO Shop. Всі права захищені.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
