@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = true;
 
         // ЗАМІНИ ЦІ ID НА СВОЇ!
-        const serviceID = 'YOUR_SERVICE_ID'; 
-        const templateID = 'YOUR_TEMPLATE_ID';
+        const serviceID = 'service_x69oyyx'; 
+        const templateID = 'template_55bzoo1';
 
         emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
