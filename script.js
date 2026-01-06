@@ -77,3 +77,41 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 });
+
+// Найди блок, где была логика выбора цвета, и замени на этот код:
+
+    const colorSpans = document.querySelectorAll(".colors span");
+    const photo1 = document.getElementById("img-main-1");
+    const photo2 = document.getElementById("img-main-2");
+    const formColorSelect = document.getElementById("form-color");
+
+    colorSpans.forEach(span => {
+        span.addEventListener("click", function() {
+            // 1. Управляем внешним видом кружочков
+            colorSpans.forEach(s => s.classList.remove("active"));
+            this.classList.add("active");
+
+            // 2. Получаем ссылки на новые фото
+            const newImg1 = this.getAttribute("data-img1");
+            const newImg2 = this.getAttribute("data-img2");
+            const colorName = this.getAttribute("data-color");
+
+            // 3. Плавная смена фото через прозрачность
+            photo1.style.opacity = "0";
+            photo2.style.opacity = "0";
+
+            setTimeout(() => {
+                photo1.src = newImg1;
+                photo2.src = newImg2;
+                
+                // Возвращаем видимость после смены источника
+                photo1.style.opacity = "1";
+                photo2.style.opacity = "1";
+            }, 400); // 400мс — время пока картинка "скрыта"
+
+            // 4. Передаем данные в форму
+            if (formColorSelect) {
+                formColorSelect.value = colorName;
+            }
+        });
+    });
