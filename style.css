@@ -7,7 +7,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    background: black;
+    
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--dark);
@@ -59,12 +59,14 @@ body {
 
 /* Галерея 2 фото */
 .product {
-    max-width: 1100px;
-    margin: 50px auto;
+    background-color: var(--pink); /* Делаем фон розовым */
+    padding: 60px 20px;           /* Добавляем отступы сверху и снизу, чтобы выглядело красиво */
+    border-radius: 20px;          /* (Опционально) Закругляем углы секции */
+    max-width: 1200px;            /* Убедись, что ширина позволяет видеть фон */
+    margin: 40px auto;            /* Центрируем саму секцию */
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 40px;
-    padding: 20px;
     align-items: center;
 }
 
