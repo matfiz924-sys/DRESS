@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Теплі дитячі костюми на флісі</title> 
-
   <link rel="stylesheet" href="style.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -15,11 +15,10 @@
       <h1>Теплі дитячі костюми на флісі</h1>
       <p>Мʼякі, зручні, для прогулянок і дому</p>
       <div class="price">від 1249 грн</div>
+      <div id="timer-container">До кінця акції: <span id="timer">12:00:00</span></div>
       <a href="#order" class="btn">Замовити</a>
     </div>
-
-    <img src="https://lemanta.com/uploads/catalog/14166/ec139de4a8a23f6d2a3a045340d7c2b6.jpg" alt="Дитячі костюми">
-  </div>
+    </div>
 </section>
 
 <section class="advantages">
@@ -32,7 +31,10 @@
 <section class="brand">kopo</section>
 
 <section class="product">
-  <img src="images/product.jpg" alt="Костюм">
+  <div class="product-img-container">
+    <img src="https://lemanta.com/uploads/catalog/14166/ec139de4a8a23f6d2a3a045340d7c2b6.jpg" alt="Дитячий костюм" id="main-photo">
+  </div>
+  
   <div class="product-info">
     <h2>Спортивний костюм</h2>
     <p>Створений для руху і комфорту</p>
@@ -44,18 +46,29 @@
     </div>
 
     <div class="price">1249 грн</div>
-    <a href="#order" class="btn">Купити</a>
+    <button class="btn open-modal">Купити</button>
   </div>
 </section>
+
+<div id="modal-overlay" class="overlay">
+  <div class="modal">
+    <span class="close-modal">&times;</span>
+    <h2>Оформлення замовлення</h2>
+    <form id="order-form">
+      <input type="text" name="user_name" placeholder="Ваше ім'я" required>
+      <input type="tel" name="user_phone" placeholder="Номер телефону" required>
+      <input type="text" name="product_color" placeholder="Колір" required>
+      <input type="text" name="product_size" placeholder="Розмір" required>
+      <input type="text" name="product_model" placeholder="Модель" required>
+      <button type="submit" id="submit-btn" class="btn">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
+    </form>
+  </div>
+</div>
 
 <section class="sizes">
   <h2>Розмірна сітка</h2>
   <table>
-    <tr>
-      <th>Зріст</th>
-      <th>Груди</th>
-      <th>Талія</th>
-    </tr>
+    <tr><th>Зріст</th><th>Груди</th><th>Талія</th></tr>
     <tr><td>98</td><td>54</td><td>52</td></tr>
     <tr><td>104</td><td>56</td><td>54</td></tr>
     <tr><td>110</td><td>58</td><td>56</td></tr>
@@ -65,26 +78,17 @@
 <section id="order" class="order">
   <h2>Встигніть замовити</h2>
   <div class="price">1249 грн</div>
-  <button class="btn" id="orderBtn">Оформити замовлення</button>
+  <button class="btn open-modal">Оформити замовлення</button>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div>
-      <strong>Kopo</strong><br>
-      Дитячий одяг
-    </div>
-    <div>
-      Instagram<br>
-      Telegram
-    </div>
-    <div>
-      Доставка та оплата<br>
-      Політика повернення
-    </div>
+    <div><strong>Kopo</strong><br>Дитячий одяг</div>
+    <div>Instagram<br>Telegram</div>
+    <div>Доставка та оплата<br>Політика повернення</div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
