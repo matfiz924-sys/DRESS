@@ -191,7 +191,7 @@ body {
 
 /* Стиль для логотипу над розмірною сіткою */
 .brand-logo-section {
-    background: black; /* Чорний фон, як і був у роздільника */
+    
     padding: 40px 20px;
     text-align: center;
     display: flex;
