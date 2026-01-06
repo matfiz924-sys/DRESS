@@ -1,94 +1,51 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Теплі дитячі костюми на флісі</title> 
-  <link rel="stylesheet" href="style.css"> 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-</head>
-<body>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1>Теплі дитячі костюми на флісі</h1>
-      <p>Мʼякі, зручні, для прогулянок і дому</p>
-      <div class="price">від 1249 грн</div>
-      <div id="timer-container">До кінця акції: <span id="timer">12:00:00</span></div>
-      <a href="#order" class="btn">Замовити</a>
+<section class="product" id="catalog">
+    <div class="product-gallery">
+        <img src="img/khaki_1.jpg" id="img-main-1" class="gallery-img">
+        <img src="img/khaki_2.jpg" id="img-main-2" class="gallery-img">
     </div>
+    
+    <div class="product-info">
+        <h2 id="model-name">Спортивний костюм "Comfort"</h2>
+        <p>Створений для руху і комфорту</p>
+        
+        <div class="colors">
+            <span data-color="Чорний" data-img1="black_1.jpg" data-img2="black_2.jpg" style="background: #000;"></span>
+            <span data-color="Сірий" data-img1="gray_1.jpg" data-img2="gray_2.jpg" style="background: #808080;"></span>
+            <span data-color="Хакі" data-img1="khaki_1.jpg" data-img2="khaki_2.jpg" style="background: #6b705c;"></span>
+            <span data-color="Коричневий" data-img1="brown_1.jpg" data-img2="brown_2.jpg" style="background: #582f0e;"></span>
+        </div>
+        <div class="price">1249 грн</div>
+        <button class="btn open-modal">Оформити замовлення</button>
     </div>
-</section>
-
-<section class="advantages">
-  <div class="adv">✔ Власне виробництво</div>
-  <div class="adv">✔ Якісний фліс</div>
-  <div class="adv">✔ Швидка доставка</div>
-  <div class="adv">✔ Обмін / повернення</div>
-</section>
-
-<section class="brand">kopo</section>
-
-<section class="product">
-  <div class="product-img-container">
-    <img src="https://lemanta.com/uploads/catalog/14166/ec139de4a8a23f6d2a3a045340d7c2b6.jpg" alt="Дитячий костюм" id="main-photo">
-  </div>
-  
-  <div class="product-info">
-    <h2>Спортивний костюм</h2>
-    <p>Створений для руху і комфорту</p>
-
-    <div class="colors">
-      <span data-color="beige"></span>
-      <span data-color="gray"></span>
-      <span data-color="black"></span>
-    </div>
-
-    <div class="price">1249 грн</div>
-    <button class="btn open-modal">Купити</button>
-  </div>
 </section>
 
 <div id="modal-overlay" class="overlay">
-  <div class="modal">
-    <span class="close-modal">&times;</span>
-    <h2>Оформлення замовлення</h2>
-    <form id="order-form">
-      <input type="text" name="user_name" placeholder="Ваше ім'я" required>
-      <input type="tel" name="user_phone" placeholder="Номер телефону" required>
-      <input type="text" name="product_color" placeholder="Колір" required>
-      <input type="text" name="product_size" placeholder="Розмір" required>
-      <input type="text" name="product_model" placeholder="Модель" required>
-      <button type="submit" id="submit-btn" class="btn">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
-    </form>
-  </div>
+    <div class="modal">
+        <span class="close-modal">&times;</span>
+        <h3>Оформлення замовлення</h3>
+        <form id="order-form">
+            <input type="text" name="user_name" placeholder="Ваше ім'я" required>
+            <input type="tel" name="user_phone" placeholder="Номер телефону" required>
+            
+            <input type="text" name="product_model" id="form-model" readonly placeholder="Модель">
+            
+            <select name="product_color" id="form-color" required>
+                <option value="">Оберіть колір</option>
+                <option value="Чорний">Чорний</option>
+                <option value="Сірий">Сірий</option>
+                <option value="Хакі">Хакі</option>
+                <option value="Коричневий">Коричневий</option>
+            </select>
+
+            <select name="product_size" id="form-size" required>
+                <option value="">Оберіть розмір</option>
+                <option value="98">98</option>
+                <option value="104">104</option>
+                <option value="110">110</option>
+                <option value="116">116</option>
+            </select>
+            
+            <button type="submit" id="submit-btn" class="btn">ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
+        </form>
+    </div>
 </div>
-
-<section class="sizes">
-  <h2>Розмірна сітка</h2>
-  <table>
-    <tr><th>Зріст</th><th>Груди</th><th>Талія</th></tr>
-    <tr><td>98</td><td>54</td><td>52</td></tr>
-    <tr><td>104</td><td>56</td><td>54</td></tr>
-    <tr><td>110</td><td>58</td><td>56</td></tr>
-  </table>
-</section>
-
-<section id="order" class="order">
-  <h2>Встигніть замовити</h2>
-  <div class="price">1249 грн</div>
-  <button class="btn open-modal">Оформити замовлення</button>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div><strong>Kopo</strong><br>Дитячий одяг</div>
-    <div>Instagram<br>Telegram</div>
-    <div>Доставка та оплата<br>Політика повернення</div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
