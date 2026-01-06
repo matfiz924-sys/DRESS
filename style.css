@@ -130,3 +130,48 @@ body {
     .product { grid-template-columns: 1fr; }
     .product-gallery { grid-template-columns: 1fr; }
 }
+/* Плавность для фото в галерее */
+.gallery-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease-in-out; /* Плавная смена прозрачности */
+    opacity: 1;
+}
+
+/* Эффект для кружочков цветов */
+.colors {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.colors span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    transition: all 0.4s ease; /* Плавное увеличение и осветление */
+    
+    /* Делаем их тусклыми и уменьшенными по умолчанию */
+    opacity: 0.5;
+    transform: scale(0.8);
+    filter: grayscale(0.5); /* Немного обесцвечиваем */
+}
+
+/* Когда цвет выбран (активный) */
+.colors span.active {
+    opacity: 1;
+    transform: scale(1.2); /* Увеличиваем */
+    filter: grayscale(0);  /* Возвращаем яркость */
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 90, 110, 0.5);
+}
+
+/* Эффект при наведении */
+.colors span:hover {
+    opacity: 0.8;
+    transform: scale(1);
+}
