@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = true;
 
         // ВСТАВЬ СВОИ ID ВМЕСТО ЭТИХ:
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        emailjs.sendForm('service_x69oyyx', 'template_55bzoo1', this)
             .then(function() {
                 // Красивое завершение
                 overlay.style.display = 'none'; // Закрываем форму
