@@ -13,7 +13,7 @@ body {
 }
 
 .hero {
-    background: var(--pink);
+    background: white;
     padding: 60px 20px;
     text-align: center;
 }
