@@ -204,3 +204,21 @@ body {
     height: auto;
     filter: brightness(0) invert(1); /* Якщо логотип темний, це зробить його білим на чорному фоні */
 }
+
+
+.sizes {
+    background: var(--bg); /* Твій колір фону */
+    padding: 60px 20px;
+    text-align: center;    /* Центрує заголовок h2 та текст */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Центрує таблицю по горизонталі */
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 600px;      /* Обмежуємо ширину, щоб вона не виглядала занадто розтягнутою */
+    border-collapse: collapse;
+    margin-top: 20px;      /* Відступ від заголовка */
+}
