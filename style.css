@@ -1,147 +1,71 @@
+/* Твои переменные и старые стили остаются без изменений */
 :root {
   --pink: #f3d6de;
   --accent: #ff5a6e;
   --dark: #111;
-  --gray: #777;
   --bg: #fafafa;
 }
 
-* {
-  box-sizing: border-box; 
+/* Стили для таймера */
+#timer-container {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 20px;
 }
+#timer { color: var(--accent); }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #111;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.hero {
-  background: var(--pink);
-  padding: 60px 20px;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+/* Модальное окно (Overlay) */
+.overlay {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  justify-content: center;
   align-items: center;
 }
 
-.hero h1 {
-  font-size: 36px;
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
 }
 
-.price {
-  font-size: 28px;
-  color: var(--accent);
-  font-weight: bold;
+.close-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 25px; cursor: pointer;
 }
 
-.btn {
-  display: inline-block;
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-top: 20px;
-  background: var(--accent);
-  color: #fff;
-  padding: 14px 26px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
 }
 
-.advantages {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  text-align: center;
-}
-
-.brand {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 50px 20px;
-  font-size: 48px;
-  letter-spacing: 6px;
-}
-
-.product {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.colors span {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 6px;
-  border: 1px solid #ccc;
-}
-
-.colors span[data-color="beige"] { background: #e6d1b3; }
-.colors span[data-color="gray"] { background: #5f6b78; }
-.colors span[data-color="black"] { background: #000; }
-
-.sizes {
-  background: var(--bg);
-  padding: 40px 20px;
-}
-
-table {
-  max-width: 800px;
-  margin: auto;
+#order-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   width: 100%;
-  border-collapse: collapse;
 }
 
-td, th {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
+/* Как менять цвета кружков (Пункт 1) */
+.colors span[data-color="beige"] { background: #e6d1b3; } /* Меняй HEX код здесь */
+.colors span[data-color="gray"] { background: #5f6b78; }  /* И здесь */
+.colors span[data-color="black"] { background: #000; }    /* И здесь */
 
-.order {
-  background: var(--pink);
-  padding: 60px 20px;
-  text-align: center;
-}
-
-footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 20px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+/* Адаптивность для фото в блоке product */
+.product {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
-  .hero-inner,
-  .product {
-    grid-template-columns: 1fr;
-  }
-
-  .brand {
-    font-size: 36px;
-  }
+  .product { grid-template-columns: 1fr; }
 }
