@@ -1,71 +1,128 @@
-/* Твои переменные и старые стили остаются без изменений */
 :root {
-  --pink: #f3d6de;
-  --accent: #ff5a6e;
-  --dark: #111;
-  --bg: #fafafa;
+    --pink: #f3d6de;
+    --accent: #ff5a6e;
+    --dark: #111;
 }
 
-/* Стили для таймера */
-#timer-container {
-  margin-top: 15px;
-  font-weight: bold;
-  font-size: 20px;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
 }
+
+.hero {
+    background: var(--pink);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+#timer-container {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
 #timer { color: var(--accent); }
 
-/* Модальное окно (Overlay) */
+.price {
+    font-size: 32px;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.advantages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.brand-divider {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.product {
+    display: flex;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 20px;
+    gap: 40px;
+    align-items: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.colors span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+/* Модальне вікно */
 .overlay {
-  display: none; /* Скрыто по умолчанию */
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
 }
 
 .close-modal {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 25px; cursor: pointer;
+    position: absolute;
+    top: 10px; right: 20px;
+    font-size: 30px; cursor: pointer;
 }
 
-.order-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+#order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 #order-form input {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  width: 100%;
-}
-
-/* Как менять цвета кружков (Пункт 1) */
-.colors span[data-color="beige"] { background: #e6d1b3; } /* Меняй HEX код здесь */
-.colors span[data-color="gray"] { background: #5f6b78; }  /* И здесь */
-.colors span[data-color="black"] { background: #000; }    /* И здесь */
-
-/* Адаптивность для фото в блоке product */
-.product {
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 @media (max-width: 768px) {
-  .product { grid-template-columns: 1fr; }
+    .product { flex-direction: column; text-align: center; }
 }
