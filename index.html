@@ -71,30 +71,29 @@
         <span class="close-modal">&times;</span>
         <h3>Замовлення</h3>
         <form id="order-form">
-            <input type="text" name="user_name" placeholder="Ваше ім'я" required>
-            <input type="tel" name="user_phone" placeholder="Номер телефону" required>
-            
-            <input type="text" name="product_model" id="form-model" readonly>
-            
-            <select name="product_color" id="form-color" required>
-                <option value="">Оберіть колір</option>
-                <option value="Хакі">Хакі</option>
-                <option value="Чорний">Чорний</option>
-                <option value="Сірий">Сірий</option>
-                <option value="Коричневий">Коричневий</option>
-            </select>
+    <input type="text" name="user_name" placeholder="Ваше ім'я" required>
+    <input type="tel" name="user_phone" placeholder="Номер телефону" required>
+    
+    <input type="text" name="product_model" id="form-model" readonly>
+    
+    <select name="product_color" id="form-color">
+        <option value="Не вказано">Оберіть колір (необов'язково)</option>
+        <option value="Хакі">Хакі</option>
+        <option value="Чорний">Чорний</option>
+        <option value="Сірий">Сірий</option>
+        <option value="Коричневий">Коричневий</option>
+    </select>
 
-            <select name="product_size" required>
-                <option value="">Оберіть розмір</option>
-                <option value="98">98</option>
-                <option value="104">104</option>
-                <option value="110">110</option>
-                <option value="116">116</option>
-            </select>
-            
-            <button type="submit" id="submit-btn" class="btn">ПІДТВЕРДИТИ</button>
-        </form>
-    </div>
+    <select name="product_size">
+        <option value="Не вказано">Оберіть розмір (необов'язково)</option>
+        <option value="98">98</option>
+        <option value="104">104</option>
+        <option value="110">110</option>
+        <option value="116">116</option>
+    </select>
+    
+    <button type="submit" id="submit-btn" class="btn">ПІДТВЕРДИТИ</button>
+</form>
 </div>
 
 
